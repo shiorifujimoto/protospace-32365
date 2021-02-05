@@ -48,8 +48,8 @@
           <%# 投稿に紐づくコメントを一覧する処理を記述する %>
           <% @comments.each do |comment| %>
             <li class="comments_list">
-              <%= " コメントのテキスト "%>
-              <%= link_to "（ ユーザー名 ）", user_path(comment.id), class: :comment_user %>
+              <%= comment.text %>
+              <%= link_to comment.user.name, user_path(comment.id), class: :comment_user %>
             </li>
           <% end %>
           <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
